@@ -2,6 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Jose Carlos de Jesus Junior</Authors>
+    <Company>Jose Carlos de Jesus Junior</Company>
+    <PackageId>Framework.Services.Core</PackageId>
+    <Description>It provides core services for software development</Description>
+    <Copyright>Copyright © - All rights reserved</Copyright>
+    <PackageLicenseUrl>https://github.com/juninhodigital/Framework.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
+    <PackageIconUrl />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Framework.Services.Core.1.0.0.nupkg" />
+    <None Remove="Framework.Services.Core.nuspec" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.5.0" />
+  </ItemGroup>
 
 </Project>
