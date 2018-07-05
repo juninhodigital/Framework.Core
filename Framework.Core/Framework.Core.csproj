@@ -6,14 +6,18 @@
     <Company>Jose Carlos de Jesus Junior</Company>
     <PackageId>Framework.Services.Core</PackageId>
     <Description>It provides core services for software development</Description>
-    <Copyright>Copyright © - All rights reserved</Copyright>
+    <Copyright></Copyright>
     <PackageLicenseUrl>https://github.com/juninhodigital/Framework.Core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
     <PackageIconUrl />
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Framework.Core.nuspec" />
     <None Remove="Framework.Services.Core.1.0.0.nupkg" />
+    <None Remove="Framework.Services.Core.1.0.1.nupkg" />
     <None Remove="Framework.Services.Core.nuspec" />
   </ItemGroup>
 
