@@ -5,13 +5,16 @@
     <Authors>Jose Carlos de Jesus Junior</Authors>
     <Company>Jose Carlos de Jesus Junior</Company>
     <PackageId>Framework.Services.Core</PackageId>
-    <Description>It provides core services for software development</Description>
-    <Copyright></Copyright>
+    <Description>It provides some useful extensions methods for software development regardless the application type</Description>
+    <Copyright>Copyright 2018</Copyright>
     <PackageLicenseUrl>https://github.com/juninhodigital/Framework.Core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
-    <PackageIconUrl />
+    <PackageIconUrl>https://github.com/juninhodigital/Framework.Core/blob/master/Icons/FS_IconSmall.png?raw=true</PackageIconUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>Extension Methods, Library, Helper, Framework</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
