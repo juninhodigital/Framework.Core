@@ -15,6 +15,7 @@
     <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageTags>Extension Methods, Library, Helper, Framework</PackageTags>
+    <NeutralLanguage>English (United States)</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
