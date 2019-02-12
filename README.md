@@ -13,11 +13,8 @@ Technologies
 
 Full Version | NuGet		 | Package Manager
 ------------ | :-------------|:----------------
-Framework.Services.Cache          | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
-Framework.Services.Core           | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
-Framework.Services.Cryptography   | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
-Framework.Services.Data           | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
-Framework.Services.Entity         | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Core          | <a href="https://www.nuget.org/packages/Framework.Services.Core/"><img src="https://github.com/juninhodigital/Framework.Core/blob/master/nuget.svg"/></a> | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Core          | <a href="https://www.nuget.org/packages/Framework.Services.Core/"><img src="https://github.com/juninhodigital/Framework.Core/blob/master/nuget.svg"/></a> | PM > Install-Package Framework.Services.Core -Version 1.0.2
 
 ## Contribute
 The best way to contribute is by **spreading the word** about the library:
