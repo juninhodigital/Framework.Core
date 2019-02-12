@@ -1,13 +1,13 @@
 # Framework.Core
-## Enhance your .NET application with over 1000 extension methods.
-
+#### Enhance your .NET application with over 1000 extension methods.
 This is a .NET Core library that contains a whole bunch of useful extension methods and 
 
 Technologies
 - [x] .NET Core and .NET Standard
 
 ### TO DO
-- [ ] Unit testing project
+- [ ] **Add Unit testing project**
+- [ ] **Create Unit tests**
 
 ## Download
 
