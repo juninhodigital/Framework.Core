@@ -11,26 +11,24 @@ Technologies
 
 ## Download
 
-Full Version | NuGet
------------- | :-------------:
-Framework.Services.Cache          | <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-object-namespace-v.svg" alt="download" /></a> <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-object-namespace-d.svg" alt="" /></a>
-Framework.Services.Core           | <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-one-namespace-v.svg" alt="download" /></a> <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-one-namespace-d.svg" alt="" /></a>
-Framework.Services.Cryptography   | <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-two-namespace-v.svg" alt="download" /></a> <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-two-namespace-d.svg" alt="" /></a>
-Framework.Services.Data           | <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-namespace-v.svg" alt="download" /></a> <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-namespace-d.svg" alt="" /></a>
-Framework.Services.Entity         | <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-namespace-v.svg" alt="download" /></a> <a href="https://www.nuget.org/packages/Framework.Services.Core/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/extension-methods-with-namespace-d.svg" alt="" /></a>
-
-<a href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/Downloads">More download options (Full and Standalone Version)</a>
+Full Version | NuGet		 | Package Manager
+------------ | :-------------|:----------------
+Framework.Services.Cache          | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Core           | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Cryptography   | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Data           | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
+Framework.Services.Entity         | ICON NUGET | PM > Install-Package Framework.Services.Core -Version 1.0.2
 
 ## Contribute
 The best way to contribute is by **spreading the word** about the library:
 
- - Blog it
- - Comment it
  - Fork it
+ - Pull Request
+ - Comment it
  - Star it
  - Share it
  
-A **HUGE THANKS** for your help.
+I would really love your help to make it better and usefull to the community.
 
 ## More Projects
 
