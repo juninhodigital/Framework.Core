@@ -1,6 +1,6 @@
 # Framework.Core
 #### Enhance your .NET application with more than 1000 extension methods.
-It is a .NET Core/Standard library that provides some useful extensions methods to be used by your application regardless its the application type and it will improve your software development lifecycle.
+It is a .NET Core/Standard library that provides some useful extensions methods to be used by your application regardless its application type and it will improve your software development lifecycle.
 
 Technologies
 - [x] .NET Core and .NET Standard
