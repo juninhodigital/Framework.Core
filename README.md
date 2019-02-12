@@ -17,7 +17,7 @@ Framework.Services.Core          | <a href="https://www.nuget.org/packages/Frame
 Framework.Services.Core          | <a href="https://www.nuget.org/packages/Framework.Services.Core/"><img src="https://github.com/juninhodigital/Framework.Core/blob/master/nuget.svg"/></a> | PM > Install-Package Framework.Services.Core -Version 1.0.2
 
 ## Contribute
-The best way to contribute is by **spreading the word** about the library:
+The best way to contribute is by **putting in some good words** about the library and help me out by:
 
  - Fork it
  - Pull Request
