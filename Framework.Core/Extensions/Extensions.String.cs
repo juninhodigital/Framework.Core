@@ -9,6 +9,7 @@ using System.Web;
 using System.Xml.Serialization;
 using System.Linq;
 using System.Security;
+
 using Newtonsoft.Json;
 
 namespace Framework.Core
@@ -321,6 +322,30 @@ namespace Framework.Core
         #endregion
 
         #region| Validation |
+
+        /// <summary>
+        /// Determines whether the specified value is null or empty.
+        /// </summary>
+        /// <param name="@string">The string value</param>
+        /// <returns>
+        /// 	true if the specified value is null; otherwise, false.
+        /// </returns>
+        public static bool IsNull(this string @string)
+        {
+            return string.IsNullOrEmpty(@string);
+        }
+
+        /// <summary>
+        /// Determines whether the specified value is not null and not empty.
+        /// </summary>
+        /// <param name="@string">The string value</param>
+        /// <returns>
+        /// 	true if the specified value is null; otherwise, false.
+        /// </returns>
+        public static bool IsNotNull(this string @string)
+        {
+            return !@string.IsNull();
+        }
 
         /// <summary>
         /// Throws an exception whether the incoming parameter is null

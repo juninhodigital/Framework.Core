@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data.SqlTypes;
 using System.IO;
 using System.Linq.Expressions;
 using System.Net.NetworkInformation;
@@ -152,17 +151,6 @@ namespace Framework.Core
         }
 
         /// <summary>
-        ///  Gets the System.Configuration.AppSettingsSection data for the current application's default configuration.
-        /// </summary>
-        /// <param name="object">sender</param>
-        /// <param name="Name">Key name of the Appsettings in the web.config/app.config</param>
-        /// <returns>Value</returns>
-        public static string GetAppSettings(this object @object, string Name)
-        {
-            return ConfigurationManager.AppSettings[Name];
-        }
-        
-        /// <summary>
         /// The miss the Visual Basic's With statement method
         /// </summary>
         /// <typeparam name="T">paramtype</typeparam>
@@ -256,7 +244,7 @@ namespace Framework.Core
 
             return null;
         }
-        
+
         #endregion
 
         #region| Comparison |
@@ -270,30 +258,7 @@ namespace Framework.Core
         /// </returns>
         public static bool IsNull(this object @object)
         {
-            if (@object == null)
-            {
-                return true;
-            }
-
-            if (@object is INullable && ((INullable)@object).IsNull)
-            {
-                return true;
-            }
-
-            if (@object == DBNull.Value)
-            {
-                return true;
-            }
-
-            if (@object is string)
-            {
-                if (string.IsNullOrEmpty(@object.ToString()))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return @object == null ? true : false;                    
         }
 
         /// <summary>
