@@ -13,8 +13,7 @@ Technologies
 
 Full Version  | NuGet		       | Package Manager
 :------------ | :-------------|:----------------
-Framework.Services.Core          | <a href="https://www.nuget.org/packages/Framework.Services.Core/"><img src="https://github.com/juninhodigital/Framework.Core/blob/master/nuget.svg"/></a> | PM > Install-Package Framework.Services.Core -Version 1.0.2
-
+Framework.Services.Core          | <a href="https://www.nuget.org/packages/Framework.Services.Core/"><img src="https://github.com/juninhodigital/Framework.Core/blob/master/nuget.svg"/></a> | PM > Install-Package Framework.Services.Core
 ## Contribute
 The best way to contribute is by **putting in some good words** about the library and help me out by:
 
