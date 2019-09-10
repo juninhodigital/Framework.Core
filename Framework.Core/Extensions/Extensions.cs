@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.IO;
 using System.Linq.Expressions;
 using System.Net.NetworkInformation;
@@ -138,16 +137,6 @@ namespace Framework.Core
             {
                 return @object;
             }
-        }
-
-        /// <summary>
-        ///  Gets the System.Configuration.AppSettingsSection data for the current application's default configuration.
-        /// </summary>
-        /// <param name="Name">Key name of the Appsettings in the web.config/app.config</param>
-        /// <returns>Value</returns>
-        public static string GetAppSettings(string Name)
-        {
-            return ConfigurationManager.AppSettings[Name];
         }
 
         /// <summary>
