@@ -1,14 +1,27 @@
-using System;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Framework.Core.Tests
 {
-    public partial class Tests
+    [Trait("Category", "String")]
+    public partial class Tests : BaseTest
     {
+        #region| Constructor |
+
+        public Tests(ITestOutputHelper testOutputHelper) : base(testOutputHelper) { }
+
+        #endregion
+
+        #region| Tests |
+
         [Fact]
         public void ToInt()
         {
+            output.WriteLine("The method will start");
+
             var result = "10".ToInt();
+
+            output.WriteLine("The method finished");
 
             Assert.Equal(10, result);
         }
@@ -21,6 +34,19 @@ namespace Framework.Core.Tests
             Assert.False(result);
         }
 
+        [Theory]
+        [InlineData("John")]
+        [InlineData("Mary")]
+        [InlineData("junior")]
+        [InlineData("Joe")]
+        [InlineData("Junior")]
+        public void Test(string input)
+        {
+            Assert.Equal("Junior", input, false);
+        }
+
+        #endregion
+               
         // ThrowIfNull
         // ThrowIfNull (overload)
         // IsEqual
