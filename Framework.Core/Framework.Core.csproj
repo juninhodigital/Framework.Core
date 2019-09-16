@@ -11,12 +11,16 @@
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
     <PackageIconUrl>https://github.com/juninhodigital/Framework.Core/blob/master/Icons/FS_IconSmall.png?raw=true</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageTags>Extension Methods, Library, Helper, Framework</PackageTags>
     <NeutralLanguage>English (United States)</NeutralLanguage>
     <RepositoryType>Github</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
