@@ -1,3 +1,4 @@
+using System.Threading;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -32,6 +33,21 @@ namespace Framework.Core.Tests
             var result = "".IsNotNull();
 
             Assert.False(result);
+        }
+
+        [Fact]
+        public void MiniProfile()
+        {
+            using (var profiler = new MiniProfiler("Test class"))
+            {
+                // Your code goes here
+                Thread.Sleep(2000);
+
+                // Get the elapsed time
+                var elapsed = profiler.GetElapsedTime();
+            }
+
+            // Check the output window to see the total executiion time
         }
 
         [Theory]
