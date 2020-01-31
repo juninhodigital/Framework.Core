@@ -267,6 +267,17 @@ namespace Framework.Core
             return !ContainsAll(@List, items);
         }
 
+        /// <summary>
+        /// Convert an ienumerable into a list if it is not null
+        /// </summary>
+        /// <typeparam name="T">param type</typeparam>
+        /// <param name="List"></param>
+        /// <returns></returns>
+        public static List<T> ToListIfNotNull<T>(this IEnumerable<T> @List)
+        {
+            return (@List != null ? new List<T>(@List) : null);
+        }
+
         #endregion
     }
 }
