@@ -487,15 +487,7 @@ namespace Framework.Core
                 return false;
             }
 
-            try
-            {
-                Convert.ToDateTime(@string);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return DateTime.TryParse(@string, out var data);
         }
 
         /// <summary>
