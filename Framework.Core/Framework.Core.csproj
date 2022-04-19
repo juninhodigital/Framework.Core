@@ -4,17 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Jose Carlos de Jesus Junior</Authors>
     <Company>Jose Carlos de Jesus Junior</Company>
-    <PackageId>Framework.Services.Core</PackageId>
     <Description>It provides some useful extensions methods for software development regardless the application type</Description>
     <Copyright>Copyright 2022</Copyright>    
-    <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>    
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.15</Version>
-    <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
+    <Version>1.0.16</Version>
+    <PackageId>Framework.Services.Core</PackageId>
+    <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/juninhodigital/Framework.Core/blob/master/Icons/FS_IconSmall.png?raw=true</PackageIconUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageTags>Extension Methods, Library, Helper, Framework</PackageTags>
-    <NeutralLanguage>English (United States)</NeutralLanguage>
     <RepositoryType>Github</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
+    <NeutralLanguage>English (United States)</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,13 +25,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>false</Optimize>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Framework.Core.nuspec" />
-    <None Remove="Framework.Services.Core.1.0.0.nupkg" />
-    <None Remove="Framework.Services.Core.1.0.1.nupkg" />
-    <None Remove="Framework.Services.Core.nuspec" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
