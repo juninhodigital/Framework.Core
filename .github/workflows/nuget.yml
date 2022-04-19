@@ -25,8 +25,7 @@ jobs:
 
     - name: 'Build project'
       run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
-
-    - name: get-npm-version
+    
      - name: Generate build number
       id: buildnumber
       uses: juninhodigital/build-number@v3 
