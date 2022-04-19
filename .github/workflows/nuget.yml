@@ -5,7 +5,7 @@ on: [push]
 env:
   PROJECT_PATH: 'Framework.Core/Framework.Core.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
-  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+  NUGET_SOURCE_URL: 'https://www.nuget.org/api/v2/package/Framework.Services.Core/index.json'
 
 jobs:
   deploy:
