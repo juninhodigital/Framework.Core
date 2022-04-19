@@ -1,9 +1,6 @@
 name: "Deploy to NuGet"
 
-on:
-  push:
-    tags:
-    - 'v*'
+on: [push]
 
 env:
   PROJECT_PATH: 'Framework.Core.csproj'
