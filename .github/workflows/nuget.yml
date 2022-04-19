@@ -27,9 +27,11 @@ jobs:
       run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
 
     - name: get-npm-version
-    - uses: juninhodigital/build-number@v1
-        with:
-            token: ${{secrets.NUGET_AUTH_TOKEN}}
+     - name: Generate build number
+      id: buildnumber
+      uses: juninhodigital/build-number@v3 
+      with:
+        token: ${{secrets.NUGET_AUTH_TOKEN}} 
 
     - name: 'Pack project'
       run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
