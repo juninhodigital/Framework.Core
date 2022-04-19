@@ -3,7 +3,7 @@ name: "Deploy to NuGet"
 on: [push]
 
 env:
-  PROJECT_PATH: 'Framework.Core.csproj'
+  PROJECT_PATH: '/Framework.Core.csproj'
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
   NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
 
