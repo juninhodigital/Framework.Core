@@ -1,11 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
     <Authors>Jose Carlos de Jesus Junior</Authors>
     <Company>Jose Carlos de Jesus Junior</Company>
     <Description>It provides some useful extensions methods for software development regardless the application type</Description>
-    <Copyright>Copyright 2022</Copyright>    
+    <Copyright>Copyright 2022</Copyright>
     <Version>1.0.20</Version>
     <PackageId>Framework.Services.Core</PackageId>
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
@@ -16,6 +19,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
     <NeutralLanguage>English (United States)</NeutralLanguage>
+    
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

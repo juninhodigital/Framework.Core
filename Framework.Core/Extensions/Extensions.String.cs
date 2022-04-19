@@ -330,11 +330,8 @@ namespace Framework.Core
         /// <returns>
         /// 	true if the specified value is null; otherwise, false.
         /// </returns>
-        public static bool IsNull(this string @string)
-        {
-            return string.IsNullOrEmpty(@string);
-        }
-
+        public static bool IsNull(this string @string) => string.IsNullOrEmpty(@string);
+        
         /// <summary>
         /// Determines whether the specified value is not null and not empty.
         /// </summary>
@@ -342,10 +339,7 @@ namespace Framework.Core
         /// <returns>
         /// 	true if the specified value is null; otherwise, false.
         /// </returns>
-        public static bool IsNotNull(this string @string)
-        {
-            return !@string.IsNull();
-        }
+        public static bool IsNotNull(this string @string) => !@string.IsNull();
 
         /// <summary>
         /// Throws an exception whether the incoming parameter is null
@@ -1110,14 +1104,14 @@ namespace Framework.Core
         /// <param name="string">The string to write to file</param>
         /// <param name="FilePath">The file to write the string to</param>
         /// <param name="Encoding">Encoding to write the file</param>
-        public static void ToFile(this string @string, string FilePath, Encoding @Encoding = null)
+        public static void ToFile(this string @string, string FilePath, Encoding? @Encoding = null)
         {
             if (!Directory.Exists(Path.GetDirectoryName(FilePath)))
             {
                 Directory.CreateDirectory(FilePath);
             }
 
-            if (@Encoding.IsNull())
+            if (@Encoding==null)
             {
                 @Encoding = Encoding.GetEncoding("ISO-8859-1");
             }
