@@ -63,7 +63,6 @@ namespace Framework.Core.Tests
 
         #endregion
 
-        //TODO:
         // ThrowIfNull
         // ThrowIfNull (overload)
         // IsEqual
