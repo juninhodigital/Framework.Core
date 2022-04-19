@@ -27,7 +27,7 @@ jobs:
       run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
 
     - name: get-npm-version
-    - uses: einaregilsson/build-number@v1
+    - uses: juninhodigital/build-number@v1
         with:
             token: ${{secrets.NUGET_AUTH_TOKEN}}
 
