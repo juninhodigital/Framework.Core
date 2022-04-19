@@ -6,10 +6,10 @@
     <Company>Jose Carlos de Jesus Junior</Company>
     <PackageId>Framework.Services.Core</PackageId>
     <Description>It provides some useful extensions methods for software development regardless the application type</Description>
-    <Copyright>Copyright 2018</Copyright>    
+    <Copyright>Copyright 2022</Copyright>    
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.14</Version>
+    <Version>1.0.15</Version>
     <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageTags>Extension Methods, Library, Helper, Framework</PackageTags>
