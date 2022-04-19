@@ -1,34 +1,38 @@
-name: Build and publish package
+name: "Deploy to NuGet"
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
+on: [push]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  PROJECT_PATH: 'Framework.Core/Framework.Core.csproj'
+  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  NUGET_SOURCE_URL: 'https://api.nuget.org/v3/index.json'
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+  deploy:
+    name: 'Deploy'
+    runs-on: 'windows-latest'
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
+    - name: 'Checkout'
+      uses: actions/checkout@v2
 
-      - name: Setup .NET environment
-        uses: actions/setup-dotnet@v1
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+
+    - name: get-npm-version
+    - uses: einaregilsson/build-number@v1
         with:
-          dotnet-version: '3.1.102'
-          source-url: https://nuget.pkg.github.com/juninhodigital/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
+            token: ${{secrets.NUGET_AUTH_TOKEN}}
 
-      - name: Build project
-        run: dotnet build -c Release
+    - name: 'Pack project'
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
-      - name: Generate a NuGet package
-        run: dotnet pack --no-build -c Release -o .
-
-      - name: Push to GitHub package registry
-        run: dotnet nuget push *.nupkg
+    - name: 'Push package'
+      run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_AUTH_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}
