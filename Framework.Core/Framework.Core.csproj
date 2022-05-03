@@ -9,7 +9,7 @@
     <Company>Jose Carlos de Jesus Junior</Company>
     <Description>It provides some useful extensions methods for software development regardless the application type</Description>
     <Copyright>Copyright 2022</Copyright>
-    <Version>1.0.21</Version>
+    <Version>1.0.22</Version>
     <PackageId>Framework.Services.Core</PackageId>
     <PackageProjectUrl>https://github.com/juninhodigital/Framework.Core</PackageProjectUrl>
     <PackageIconUrl>https://github.com/juninhodigital/Framework.Core/blob/master/Icons/FS_IconSmall.png?raw=true</PackageIconUrl>
@@ -31,8 +31,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
