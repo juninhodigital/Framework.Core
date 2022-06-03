@@ -234,6 +234,28 @@ namespace Framework.Core
             return null;
         }
 
+        /// <summary>
+        /// Check whether the given object is a primitive type
+        /// </summary>
+        /// <param name="value">object</param>
+        /// <returns>true if the object is a primitive type, otherwise false</returns>
+        public static bool IsSimpleType(this object value)
+        {
+            var type = value.GetType();
+
+            return
+                type.IsPrimitive ||
+                new Type[]
+                {
+                    typeof(string),
+                    typeof(decimal),
+                    typeof(DateTime),
+                    typeof(DateTimeOffset),
+                    typeof(TimeSpan),
+                    typeof(Guid)
+                }.Contains(type) || type.IsEnum || Convert.GetTypeCode(type) != TypeCode.Object || (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>) && IsSimpleType(type.GetGenericArguments()[0]));
+        }
+
         #endregion
 
         #region| Comparison |
