@@ -23,11 +23,8 @@ namespace Framework.Core
         /// <returns>true if the Ping Reply is equal success</returns>
         public static bool PingHost(this object sender, string nameOrAddress)
         {
-
-            bool IsOnline = false;
-
-            Ping oPing = new Ping();
-
+            var IsOnline = false;
+            var oPing    = new Ping();
 
             try
             {
