@@ -1287,7 +1287,7 @@ namespace Framework.Core
         /// <param name="string">Entity representation in XML format</param>
         /// <param name="SerializationType">SerializationType can be XmlSerializer or JavaScriptSerializer</param>
         /// <returns>T</returns>
-        public static T Deserialize<T>(this string @string, SerializationType SerializationType) where T: class, new()
+        public static T? Deserialize<T>(this string @string, SerializationType SerializationType) where T: class, new()
         {
             var oEntity = Activator.CreateInstance<T>();
 
@@ -1297,7 +1297,7 @@ namespace Framework.Core
 
                 using (var oReader = new StringReader(@string))
                 {
-                    oEntity = (T)oSerializer.Deserialize(oReader);
+                    oEntity = oSerializer.Deserialize(oReader) as T;
                 }
             }
             else

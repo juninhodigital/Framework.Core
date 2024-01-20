@@ -67,19 +67,22 @@ namespace Framework.Core
 
             var fi = value.GetType().GetField(value.ToString());
 
-            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-            if (attributes != null && attributes.Length > 0)
+            if (fi != null)
             {
-                output = attributes[0].Description;
-            }
-            else
-            {
-                output = value.ToString();
-            }
+                var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-            fi = null;
-            attributes = null;
+                if (attributes != null && attributes.Length > 0)
+                {
+                    output = attributes[0].Description;
+                }
+                else
+                {
+                    output = value.ToString();
+                }
+
+                fi = null;
+                attributes = null;
+            }
 
             return output;
         }

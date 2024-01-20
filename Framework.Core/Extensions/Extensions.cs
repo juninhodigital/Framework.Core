@@ -119,7 +119,7 @@ namespace Framework.Core
         /// <returns>value</returns>
         public static T IfIsNull<T>(this T @object, T value)
         {
-            if (@object.IsNull())
+            if (@object==null)
             {
                 return value;
             }
@@ -176,26 +176,7 @@ namespace Framework.Core
         {
             return System.Diagnostics.Debugger.IsAttached;
         }
-
         
-        /// <summary>
-        /// A T extension method that makes a deep copy of '@this' object.
-        /// </summary>
-        /// <typeparam name="T">Generic type parameter</typeparam>
-        /// <param name="this">The @this to act on</param>
-        /// <returns>The copied object</returns>
-        public static T DeepClone<T>(this T @this)
-        {
-            var oFormatter = new BinaryFormatter();
-
-            using (var stream = new MemoryStream())
-            {
-                oFormatter.Serialize(stream, @this);
-                stream.Seek(0, SeekOrigin.Begin);
-                return (T)oFormatter.Deserialize(stream);
-            }
-        }
-
         /// <summary>
         ///  A T extension method that that return the first not null value (including the @this).
         /// </summary>

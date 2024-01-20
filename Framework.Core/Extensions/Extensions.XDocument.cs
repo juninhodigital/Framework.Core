@@ -46,13 +46,21 @@ namespace Framework.Core
         /// </summary>
         /// <param name="this"></param>
         /// <returns></returns>
-        public static XElement GetXElement(this XmlNode @this)
+        public static XElement? GetXElement(this XmlNode @this)
         {
             var oXDocument = new XDocument();
 
-            using (XmlWriter xmlWriter = oXDocument.CreateWriter())
+            using (var xmlWriter = oXDocument.CreateWriter())
+            {
                 @this.WriteTo(xmlWriter);
-            return oXDocument.Root;
+            }
+
+            if(oXDocument!=null && oXDocument.Root!=null)
+            {
+                return oXDocument.Root;
+            }
+
+            return null;
         }
         
         /// <summary>

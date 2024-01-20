@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Framework.Core
+﻿namespace Framework.Core
 {
     /// <summary>
     /// Contains Type Extension Methods
@@ -16,7 +14,14 @@ namespace Framework.Core
         /// <returns></returns>
         public static bool IsNative(this Type @type)
         {
-            return @type.Assembly.GetName().Name.IsEqual("mscorlib");
+            var name = @type.Assembly.GetName();
+
+            if (name != null && name.Name!=null)
+            {
+                return name.Name.IsEqual("mscorlib");
+            }
+
+            return false;
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Framework.Core
 {
@@ -17,17 +16,22 @@ namespace Framework.Core
         /// <returns>Details exception information</returns>
         public static string GetDetails(this Exception oException)
         {
+            var output = string.Empty;
             var oStackTrace = new StackTrace(oException, true);
 
             // Get the top stack frame
             var oStackFrame = oStackTrace.GetFrame(0);
 
-            var Details = string.Format("{0}:{1}({2})", oStackFrame.GetFileName(), oStackFrame.GetMethod().Name, oStackFrame.GetFileLineNumber());
+            if(oStackFrame != null ) 
+            {
+                output = string.Format("{0}:{1}({2})", oStackFrame.GetFileName(), oStackFrame.GetMethod()?.Name, oStackFrame.GetFileLineNumber());
 
-            oStackFrame = null;
+                oStackFrame = null;
+            }
+            
             oStackTrace = null;
 
-            return Details;
+            return output;
         }
 
         #endregion

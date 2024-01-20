@@ -19,6 +19,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/juninhodigital/Framework.Core</RepositoryUrl>
     <NeutralLanguage>English (United States)</NeutralLanguage>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     
   </PropertyGroup>
 
@@ -34,6 +35,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.0" />
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

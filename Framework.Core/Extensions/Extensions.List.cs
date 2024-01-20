@@ -94,7 +94,7 @@ namespace Framework.Core
                 {
                     var item = items[i];
 
-                    if (item.IsNotNull())
+                    if (item!=null)
                     {
                         @List.Add(item);
                     }
@@ -275,7 +275,12 @@ namespace Framework.Core
         /// <returns></returns>
         public static List<T> ToListIfNotNull<T>(this IEnumerable<T> @List)
         {
-            return (@List != null ? new List<T>(@List) : null);
+            if (@List != null)
+            {
+                return new List<T>(@List);
+            }
+
+            return new();
         }
 
         #endregion

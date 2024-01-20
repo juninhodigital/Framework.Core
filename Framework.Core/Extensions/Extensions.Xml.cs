@@ -70,24 +70,27 @@ namespace Framework.Core
         /// <summary>
         /// TODO: COMENTAR
         /// </summary>
-        public static string GetAttribute(this XmlNode @XmlNode, string name)
+        public static string? GetAttribute(this XmlNode? @XmlNode, string? name)
         {
-            if (@XmlNode.Attributes[name] != null)
+            if (name!=null && @XmlNode!=null && @XmlNode.Attributes!=null && @XmlNode.Attributes[name] != null)
             {
-                return @XmlNode.Attributes[name].Value;
+                var attribute = @XmlNode.Attributes[name];
+
+                if(attribute != null) 
+                {  
+                    return attribute.Value; 
+                }
             }
-            else
-            {
-                return string.Empty;
-            }
+         
+            return string.Empty;
         }
 
         /// <summary>
         /// TODO: COMENTAR
         /// </summary>
-        public static XmlNode GetNodes(this System.Xml.XmlNode @object, string name)
+        public static XmlNode? GetNodes(this XmlNode @object, string name)
         {
-            XmlNode Aux = null;
+            XmlNode? Aux = null;
 
             foreach (XmlNode oNode in @object.ChildNodes)
             {
@@ -103,7 +106,7 @@ namespace Framework.Core
         /// <summary>
         /// TODO: COMENTAR
         /// </summary>
-        public static XmlNode GetNode(this System.Xml.XmlDocument @object, string name)
+        public static XmlNode? GetNode(this XmlDocument @object, string name)
         {
             if (name.IsNull() || @object.IsNull() || @object.GetElementsByTagName(name).IsNull())
             {
@@ -148,15 +151,18 @@ namespace Framework.Core
             {
                 bool HasErrors = false;
 
-                XmlSchemaSet oSchema = new XmlSchemaSet();
+                var oSchema = new XmlSchemaSet();
                 oSchema.Add("", XSD_Path);
 
-                XDocument oXDocument = XDocument.Load(XML_Path);
+                var oXDocument = XDocument.Load(XML_Path);
 
-                oXDocument.Validate(oSchema, (o, e) =>
+                if (oXDocument != null)
                 {
-                    HasErrors = true;
-                });
+                    oXDocument.Validate(oSchema, (o, e) =>
+                    {
+                        HasErrors = true;
+                    });
+                }
 
                 oSchema = null;
                 oXDocument = null;
