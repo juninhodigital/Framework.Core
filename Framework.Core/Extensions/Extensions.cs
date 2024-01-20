@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq.Expressions;
 using System.Net.NetworkInformation;
@@ -28,25 +29,17 @@ namespace Framework.Core
 
             try
             {
-
                 var oPingReply = oPing.Send(nameOrAddress);
 
-
                 IsOnline = oPingReply.Status == IPStatus.Success;
-
             }
-
             catch (PingException)
             {
-
                 // Discard PingExceptions and return false;
                 IsOnline = false;
-
             }
 
-
             return IsOnline;
-
         }
 
         /// <summary>
@@ -59,11 +52,11 @@ namespace Framework.Core
         /// An object whose type is conversionType and whose value is equivalent to value.
         /// A null reference (Nothing in Visual Basic), if value is null and conversionType is not a value type.
         /// </returns>
-        public static T CastTo<T>(this object @sender, bool CanRaiseException = true)// where T: IConvertible
+        public static T? CastTo<T>(this object @sender, bool CanRaiseException = true)// where T: IConvertible
         {
             if (@sender.IsNull())
             {
-                return default(T);
+                return default;
             }
             else
             {
@@ -79,7 +72,7 @@ namespace Framework.Core
                     }
                     catch
                     {
-                        return default(T);
+                        return default;
                     }
                 }
             }
@@ -130,10 +123,8 @@ namespace Framework.Core
             {
                 return value;
             }
-            else
-            {
-                return @object;
-            }
+          
+            return @object;
         }
 
         /// <summary>
@@ -213,7 +204,7 @@ namespace Framework.Core
         /// <param name="values">A variable-length parameters list containing values.</param>
         /// <returns>The first not null value.</returns>
 
-        public static T Coalesce<T>(this T @this, params T[] values) where T : class
+        public static T? Coalesce<T>(this T @this, params T[] values) where T : class
         {
             if (@this != null)
             {
@@ -264,7 +255,7 @@ namespace Framework.Core
         /// <returns>
         /// 	true if the specified value is null; otherwise, false.
         /// </returns>
-        public static bool IsNull(this object @object)
+        public static bool IsNull([MaybeNullWhen(true)] this object @object)
         {
             return @object == null ? true : false;                    
         }
@@ -276,7 +267,7 @@ namespace Framework.Core
         /// <returns>
         /// 	true if the specified value is null; otherwise, false.
         /// </returns>
-        public static bool IsNotNull(this object @object)
+        public static bool IsNotNull([NotNullWhen(true)] this object @object)
         {
             return !@object.IsNull();
         }
@@ -299,8 +290,7 @@ namespace Framework.Core
         public static void ThrowIfNull(this object @object)
         {
             if (@object.IsNull())
-            {
-                
+            {                
                 throw new ArgumentNullException("the given parameter cannot be empty or null");
             }
         }
