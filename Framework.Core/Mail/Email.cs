@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -26,7 +25,7 @@ namespace Framework.Core
         /// <param name="UserName">The user name associated with the credential</param>
         /// <param name="Password">The password for the user name associated with the credentials</param>
         /// <param name="RequireSSL">Specify whether the System.Net.Mail.SmtpClient uses Secure Sockets Layer (SSL) to encrypt the connection.</param>
-        public void SendMail(MailAddress From, MailAddress To, string Subject, string Body, string Server, int Port, MailPriority Priority = MailPriority.Normal, List<Attachment> Attachments = null, string UserName = "", string Password = "", bool RequireSSL = false)
+        public void SendMail(MailAddress From, MailAddress To, string Subject, string Body, string Server, int Port, MailPriority Priority = MailPriority.Normal, List<Attachment>? Attachments = null, string UserName = "", string Password = "", bool RequireSSL = false)
         {
             var oRecipients = new List<MailAddress>();
 
@@ -79,7 +78,7 @@ namespace Framework.Core
         /// <param name="UserName">The user name associated with the credential</param>
         /// <param name="Password">The password for the user name associated with the credentials</param>
         /// <param name="RequireSSL">Specify whether the System.Net.Mail.SmtpClient uses Secure Sockets Layer (SSL) to encrypt the connection.</param>
-        public void SendMail(MailAddress From, List<MailAddress> ToCollection, string Subject, string Body, string Server, int Port, MailPriority Priority = MailPriority.Normal, List<Attachment> Attachments = null, string UserName = "", string Password = "", bool RequireSSL = false)
+        public void SendMail(MailAddress From, List<MailAddress> ToCollection, string Subject, string Body, string Server, int Port, MailPriority Priority = MailPriority.Normal, List<Attachment>? Attachments = null, string UserName = "", string Password = "", bool RequireSSL = false)
         {
             var oMailMessage = new MailMessage();
 
@@ -99,7 +98,7 @@ namespace Framework.Core
             oMailMessage.IsBodyHtml                  = true;
             oMailMessage.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
 
-            if (Attachments.IsNotNull())
+            if (Attachments!=null && Attachments.Count>0)
             {
                 for (int i = 0; i < Attachments.Count; i++)
                 {

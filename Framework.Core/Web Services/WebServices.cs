@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 
 namespace Framework.Core
 {
@@ -18,9 +17,9 @@ namespace Framework.Core
         /// <param name="oCredential">NetworkCredential</param>
         /// <param name="UseSystemProxy">Indicates whether the method will return a proxy configured with the Internet Explorer settings of the currently</param>
         /// <returns>WebProxy</returns>
-        private WebProxy GetProxy(string ProxyName, string ProxyPort, NetworkCredential oCredential = null, bool UseSystemProxy = true)
+        private WebProxy? GetProxy(string ProxyName, string ProxyPort, NetworkCredential? oCredential = null, bool UseSystemProxy = true)
         {
-            WebProxy oProxy = null;
+            WebProxy? oProxy = null;
 
             try
             {
@@ -34,9 +33,9 @@ namespace Framework.Core
                     oProxy = new WebProxy(string.Format("{0}:{1}", ProxyName, ProxyPort));
                 }
 
-                if (oProxy.IsNotNull())
+                if (oProxy!=null)
                 {
-                    if (oCredential.IsNull())
+                    if (oCredential==null)
                     {
                         oProxy.Credentials = CredentialCache.DefaultCredentials;
                     }
@@ -46,15 +45,15 @@ namespace Framework.Core
                         oProxy.UseDefaultCredentials = false;
                         oProxy.Credentials = oCredential;
                     }
+
+                    oProxy.UseDefaultCredentials = false;
+                    oProxy.Credentials = oCredential;
+
+                    return oProxy;
                 }
-
-                oProxy.UseDefaultCredentials = false;
-                oProxy.Credentials = oCredential;
-
             }
             catch (Exception)
             {
-                oProxy = null;
             }
 
             return oProxy;

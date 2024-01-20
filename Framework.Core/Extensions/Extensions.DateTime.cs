@@ -222,9 +222,9 @@ namespace Framework.Core
         /// <param name="DateTime">The @this to act on.</param>
         /// <param name="holidays">holiday calendar list</param>
         /// <returns></returns>
-        public static DateTime PreviousBusinessDay(this DateTime @DateTime, List<DateTime> holidays= null)
+        public static DateTime PreviousBusinessDay(this DateTime @DateTime, List<DateTime>? holidays= null)
         {
-            if (holidays.IsNull())
+            if (holidays==null)
             {
                 while (true)
                 {

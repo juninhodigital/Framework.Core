@@ -52,7 +52,7 @@ namespace Framework.Core
         /// <returns>
         /// 	true if the specified value is null; otherwise, false.
         /// </returns>
-        public static bool IsNull<T>(this List<T> @List)
+        public static bool IsNull<T>(this List<T>? @List)
         {
             if (@List == null || @List.Count == 0)
             {
