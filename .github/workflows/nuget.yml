@@ -13,7 +13,7 @@ env:
 
 jobs:
   deploy:
-    name: 'Deploy'
+    name: 'Deploy' 
     runs-on: 'windows-latest'
     steps:
     - name: Checkout
